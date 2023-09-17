@@ -1,0 +1,27 @@
+{
+    "ghp-app": {
+        "icon":   "fa-window-maximize",
+        "colour": "#FE797B",
+        "name":   "Application"
+    },
+    "ghp-web": {
+        "icon":   "fa-globe",
+        "colour": "#36CEDC",
+        "name":   "Web"
+    },
+    "ghp-lib": {
+        "icon":   "fa-book",
+        "colour": "#FFB750",
+        "name":   "Library"
+    },
+    "ghp-tol": {
+        "icon":   "fa-screwdriver-wrench",
+        "colour": "#8FE968",
+        "name":   "Tool"
+    },
+    "gph-srv": {
+        "icon":   "fa-server",
+        "colour": "#A587CA",
+        "name":   "Server"
+    }
+}

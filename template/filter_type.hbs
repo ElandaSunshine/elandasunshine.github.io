@@ -1,0 +1,6 @@
+{{#each .}}
+    <li>
+        <input id="filter-ptype-{{@index}}" type="checkbox" value="{{this.[0]}}">
+        <label class="txt-he" for="filter-ptype-{{@index}}">{{this.[1]}}</label>
+    </li>
+{{/each}}

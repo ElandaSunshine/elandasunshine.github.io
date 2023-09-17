@@ -1,0 +1,29 @@
+{{#each data}}
+    <article class="project-article" data-name="{{name}}">
+        <!-- Project preview -->
+        <img src="{{project_image_url}}" onerror="this.src='/img/no-repo-preview.jpg'" alt="repo_preview.jpg">
+
+        <div>
+            <!-- Project title and info -->
+            <header>
+                <p class="project-title txt-he">{{name}}</p>
+                {{#with (getRepoType topics)}}
+                    <span class="project-tag txt-he" style="background-color: {{colour}}">{{name}}</span>
+                {{/with}}
+                {{#if language}}
+                    <span class="project-tag txt-he" style="background-color: {{get_col language ../colours}}">{{language}}</span>
+                {{/if}}
+            </header>
+
+            <!-- Project description -->
+            <section><p class="txt-he">{{description}}</p></section>
+
+            <!-- Project statistics -->
+            <footer>
+                <span class="txt-me"><i class="fa-regular fa-star"></i> {{stargazers_count}}</span>
+                <span class="txt-me"><i class="fa-solid fa-code-fork"></i> {{forks_count}}</span>
+                <span class="txt-me"><i class="fa-regular fa-circle-dot"></i> {{open_issues}}</span>
+            </footer>
+        </div>
+    </article>
+{{/each}}

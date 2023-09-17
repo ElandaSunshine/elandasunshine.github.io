@@ -1,0 +1,23 @@
+{{#with (getObjAt terms.category 0)}}
+    <a href="/blog?category={{slug}}" id="post-category" class="cat-entry">{{name}}</a>
+{{/with}}
+<h1 id="post-title">{{{title}}}</h1>
+<div id="post-info" class="txt-me">
+    <img id="post-avatar" src="{{author.avatar_URL}}" />
+    <span>
+        <p class="txt-he">{{author.name}}</p>
+        <p class="txt-me">{{getReadableDateWTF date}}</p>
+    </span>
+</div>
+{{#if featured_image}}
+    <img id="featured-img" src="{{featured_image}}" width="960" height="502" alt="featured image">
+{{/if}}
+<div id="post-content">{{{content}}}</div>
+<div id="category-list">
+    <div class="hrule"></div>
+    {{#each terms.category}}
+        <span>
+            <a href="/blog?category={{slug}}">{{name}}</a>
+        </span>
+    {{/each}}
+</div>

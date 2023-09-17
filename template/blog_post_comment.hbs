@@ -1,0 +1,44 @@
+{{#each .}}
+    <div class="tb-main comment-entry">
+        <div class="tb-row">
+            <div class="tb-col comment-avatar">
+                <img src="{{author.image.url}}">
+            </div>
+            <div class="tb-col comment-content">
+                <p class="comment-author">{{author.displayName}} <span class="txt-me" style="font-size: 8pt; font-style: italic">{{getReadableDateWTF published}}</span></p>
+                <p class="comment-content txt-me">{{content}}</p>
+            </div>
+        </div>
+        <div class="tb-row">
+            <div class="tb-col"></div>
+            <div class="tb-col">
+                <a class="reply-button" data-id="{{id}}" href="javascript:;">Reply</a>
+            </div>
+        </div>
+        {{#each replies}}
+            <div class="tb-row comment-entry comment-reply">
+                <div class="tb-col"></div>
+                <div class="tb-col">
+                    <div class="tb-main">
+                        <div class="tb-row">
+                            <div class="tb-col"></div>
+                            <div class="tb-col"><span class="txt-me" style="font-size: 8pt"><i class="fa-solid fa-reply"></i> in reply to {{../author.displayName}}</span></div>
+                        </div>
+                        <div class="tb-row">
+                            <div class="tb-col comment-avatar">
+                                <img src="{{author.image.url}}">
+                            </div>
+                            <div class="tb-col comment-content">
+                                <p class="comment-author">
+                                    {{author.displayName}}
+                                    <span class="txt-me" style="font-size: 8pt; font-style: italic">{{getReadableDateWTF published}}</span>
+                                </p>
+                                <p class="comment-content txt-me">{{content}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{/each}}

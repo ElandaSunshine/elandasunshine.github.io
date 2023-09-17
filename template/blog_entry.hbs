@@ -1,0 +1,19 @@
+{{#each .}}
+    <article class="blog-article" data-post-id="{{ID}}">
+        <div class="post-img"
+            {{#if featured_image}}
+                style="background-image: url({{featured_image}})"
+            {{else if post_thumbnail}}
+                style="background-image: url({{post_thumbnail.URL}})"
+            {{else}}
+                style="background-image: url('/img/no-preview.jpg')"
+            {{/if}}>
+            <p>{{{getCategory categories}}}</p>
+        </div>
+        <div class="blog-main">
+            <h2 class="txt-he">{{{title}}}</h2>
+            <p class="txt-he description">{{{excerpt}}}</p>
+            <p class="txt-me">By {{author.name}} {{getMoment date}}</p>
+        </div>
+    </article>
+{{/each}}
